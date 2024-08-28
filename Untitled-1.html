@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aventura Interativa</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #fdfdfd; margin: 0; padding: 20px; }
+        h1, h2 { color: #333; }
+        img { max-width: 100%; height: auto; }
+        .options { margin-top: 20px; }
+        .button { background-color: #4CAF50; color: white; padding: 10px 20px; margin: 5px; border: none; border-radius: 5px; cursor: pointer; }
+    </style>
+</head>
+<body>
+
+    <h1>Aventura no Bosque Encantado</h1>
+    <div id="story">
+        <h2>Passo 1: O Início da Aventura</h2>
+        <img src="caminho_para_imagem_1.jpg" alt="Caminho do Bosque">
+        <p>Você está em uma floresta mágica e ouve um som vindo de um arbusto. O que você faz?</p>
+        <div class="options">
+            <button class="button" onclick="proximoPasso(2)">Investigar o som</button>
+            <button class="button" onclick="proximoPasso(3)">Ignorar e seguir em frente</button>
+        </div>
+    </div>
+
+    <script>
+        function proximoPasso(passo) {
+            const storyDiv = document.getElementById('story');
+            switch (passo) {
+                case 2:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 2: O Mistério</h2>
+                        <img src="caminho_para_imagem_2.jpg" alt="A Fada">
+                        <p>Você descobre que é uma fada em apuros! Ela pede sua ajuda para encontrar sua varinha mágica. O que você faz?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(4)">Ajudar a fada</button>
+                            <button class="button" onclick="proximoPasso(5)">Recusar e continuar sozinho</button>
+                        </div>
+                    `;
+                    break;
+                case 3:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 3: O Caminho Sozinho</h2>
+                        <img src="caminho_para_imagem_3.jpg" alt="Floresta Direita">
+                        <p>Você decide ignorar o som e continua em frente. No entanto, o caminho se divide. Para onde você vai?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(6)">Caminho à esquerda</button>
+                            <button class="button" onclick="proximoPasso(7)">Caminho à direita</button>
+                        </div>
+                    `;
+                    break;
+                case 4:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 4: A Aventura com a Fada</h2>
+                        <img src="caminho_para_imagem_4.jpg" alt="A Busca pela Varinha">
+                        <p>Você e a fada partem juntos em busca de sua varinha. Depois de um tempo, vocês encontram uma caverna. O que você faz?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(8)">Entrar na caverna</button>
+                            <button class="button" onclick="proximoPasso(9)">Continuar procurando do lado de fora</button>
+                        </div>
+                    `;
+                    break;
+                case 5:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 5: A Solidão do Bosque</h2>
+                        <img src="caminho_para_imagem_5.jpg" alt="Solidão">
+                        <p>Você decidiu continuar sozinho. No entanto, começa a escurecer e a floresta fica sinistra. Você fica perdido.</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(1)">Tentar voltar</button>
+                            <button class="button" onclick="proximoPasso(10)">Esperar ajuda</button>
+                        </div>
+                    `;
+                    break;
+                case 6:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 6: O Caminho à Esquerda</h2>
+                        <img src="caminho_para_imagem_6.jpg" alt="Mistério Esquerdo">
+                        <p>O caminho à esquerda leva você a uma clareira iluminada. Você vê uma luz mágica. O que faz?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(4)">Seguir a luz</button>
+                            <button class="button" onclick="proximoPasso(9)">Ignorar e continuar buscando algo</button>
+                        </div>
+                    `;
+                    break;
+                case 7:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 7: O Caminho à Direita</h2>
+                        <img src="caminho_para_imagem_7.jpg" alt="Mistério Direito">
+                        <p>O caminho à direita leva a uma pequena vila. Os aldeões parecem preocupados. O que você faz?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(10)">Oferecer ajuda aos aldeões</button>
+                            <button class="button" onclick="proximoPasso(3)">Continuar sua jornada</button>
+                        </div>
+                    `;
+                    break;
+                case 8:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 8: A Caverna da Fada</h2>
+                        <img src="caminho_para_imagem_8.jpg" alt="Caverna Mágica">
+                        <p>Na caverna, você encontra criaturas mágicas protegendo a varinha. Você deve lutar ou negociar...</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(11)">Lutar pelas varinha</button>
+                            <button class="button" onclick="proximoPasso(12)">Tentar negociar</button>
+                        </div>
+                    `;
+                    break;
+                case 9:
+                    storyDiv.innerHTML = `
+                        <h2>Passo 9: A Busca Sem Fim</h2>
+                        <img src="caminho_para_imagem_9.jpg" alt="Busca sem Fim">
+                        <p>Você volta para a clareira. A fada se despede, mas você não a ajuda. Ela se foi. O que você fará agora?</p>
+                        <div class="options">
+                            <button class="button" onclick="proximoPasso(4)">Tentar encontrá-la novamente</button>
+                            <button class="button" onclick="proximoPasso(10)">Aguarda outros desafios</button>
+                        </div>
+                    `;
+                    break;
+                case 10:
+                    storyDiv.innerHTML = `
+                        <h2>Fim da Aventura</h2>
+                        <img src="caminho_para_imagem_10.jpg" alt="Fim da Aventura">
+                        <p>Você tomou decisões que moldaram sua jornada. A floresta continua, cheia de mistérios. Deseja começar de novo?</p>
+                        <div class="options">
+                            <button class="button" onclick="location.reload()">Voltar ao Início</button>
+                        </div>
+                    `;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+</body>
+</html>
